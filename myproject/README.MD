@@ -54,3 +54,19 @@ def create_app():
 ```
 Flask는 기본적으로 create_app함수를 서버 실행 시 호출하도록 되어있음
 다른 이름 사용시 동작하지 않는다.
+
+
+## 파이썬 모듈
+```python
+import 모듈
+```
+모듈 내 모든 기능들을 가져온다.
+
+```python
+from 모듈 import 이름
+```
+모둘 내에서 원하는 기능만 가져온다.
+예를 들어
+```python
+from 공구통 import 플라이어
+```

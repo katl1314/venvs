@@ -10,4 +10,9 @@ def create_app():
     @app.route('/')
     def home():
         return 'Hello, World!!!'
+
+    # views 디렉터리에서 main_views를 가져온다.
+    from .views import main_views
+    app.register_blueprint(main_views.bp); #blueprint를 등록한다.
     return app
+
