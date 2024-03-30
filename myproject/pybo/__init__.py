@@ -18,10 +18,6 @@ def create_app():
     # __name__ <= 모듈명
     app = Flask(__name__)
 
-    # @app.route('/')
-    # def home():
-    #     return 'Hello, World!!!'
-
     # config.py의 작성된 항목을 app.config 환경 변수로 부르기 위해서 사용됨.
     app.config.from_object(config)
 
@@ -31,6 +27,8 @@ def create_app():
     # migrate 초기화
     migrate.init_app(app, db)
 
+    # migrate객체가 models.py을 참조해야함.
+    from . import models
 
     # views 디렉터리에서 main_views를 가져온다.
     from .views import main_views

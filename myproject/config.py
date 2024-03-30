@@ -1,7 +1,7 @@
 import os
 
 # 현 file이 위치한 디렉터리를 가져오고...
-BASE_DIR = os.path.basename(__file__)
+BASE_DIR = os.path.dirname(__file__)
 
 # format의 값을 {}에 추가한다, 순서대로 적용됨.
 
