@@ -7,9 +7,9 @@ def create_app():
     # __name__ <= 모듈명
     app = Flask(__name__)
 
-    @app.route('/')
-    def home():
-        return 'Hello, World!!!'
+    # @app.route('/')
+    # def home():
+    #     return 'Hello, World!!!'
 
     # views 디렉터리에서 main_views를 가져온다.
     from .views import main_views
