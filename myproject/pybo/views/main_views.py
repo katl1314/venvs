@@ -16,5 +16,14 @@ def root():
     # render_template(template_name[html], content[data])
     return render_template('question/question_list.html', question_list=question_list)
 
+# /detail/1
+# /detail/2
+# 다음과 같이 url의 parameter를 추가로 받기 위해서는 마지막에 /으로 닫아야함.
+@bp.route('/detail/<int:question_id>/')
+def detail(question_id):
+    # id을 통해 question값을 가져오고
+    question = Question.query.get(question_id)
+    return render_template('question/question_detail.html', question=question)
+
 # Blueprint의 3번째 인자 url_prefix는 접두어 URL을 정할 때 사용한다.
 # 예를 들어 url_prefix가 '/main'이라고 가정하면, http://localhost:5000/main 이후에 route가 적용된다.
