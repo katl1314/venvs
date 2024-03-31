@@ -1,0 +1,7 @@
+{% if question %}
+    <div>
+        <h2>제목: {{question.subject}}</h2>
+        <div>{{question.content}}</div>
+        <p>생성 날짜: {{question.create_date}}</p>
+    </div>
+{% endif %}
