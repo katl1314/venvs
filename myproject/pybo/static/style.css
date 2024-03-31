@@ -1,0 +1,9 @@
+textarea {
+    width: 100%
+}
+
+/* button의 기본 타입은 submit */
+button {
+    /* margin-top: 위로 10px */
+    margin-top: 10px;
+}
