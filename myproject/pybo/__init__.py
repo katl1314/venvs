@@ -30,10 +30,11 @@ def create_app():
     # migrate객체가 models.py을 참조해야함.
     from . import models
 
-    # views 디렉터리에서 main_views를 가져온다.
-    from .views import main_views
+    # views 디렉터리에서 main_views와 question_views을 가져온다.
+    from .views import main_views, question_views
 
     # blueprint를 등록한다.
-    app.register_blueprint(main_views.bp);
+    app.register_blueprint(main_views.bp)
+    app.register_blueprint(question_views.bp)
     return app
 
