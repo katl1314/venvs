@@ -9,4 +9,13 @@
         <!-- button은 기본적으로 submit타입임... -->
         <button>submit</button>
     </form>
+    <div>
+        <h2>답변</h2>
+        {% for answer in question.answer_set%}
+        <div>
+            <p>내용: {{answer.content}}</p>
+            <p>답변: {{answer.create_date}}</p>
+        </div>
+        {% endfor %}
+    </div>
 {% endif %}
