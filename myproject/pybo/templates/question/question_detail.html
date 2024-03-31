@@ -4,4 +4,9 @@
         <div>{{question.content}}</div>
         <p>생성 날짜: {{question.create_date}}</p>
     </div>
+    <form method="post" action="{{url_for('answer.create', question_id=question.id)}}">
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <!-- button은 기본적으로 submit타입임... -->
+        <button>submit</button>
+    </form>
 {% endif %}

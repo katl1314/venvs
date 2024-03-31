@@ -31,10 +31,11 @@ def create_app():
     from . import models
 
     # views 디렉터리에서 main_views와 question_views을 가져온다.
-    from .views import main_views, question_views
+    from .views import main_views, question_views, answer_views
 
     # blueprint를 등록한다.
     app.register_blueprint(main_views.bp)
     app.register_blueprint(question_views.bp)
+    app.register_blueprint(answer_views.bp)
     return app
 
