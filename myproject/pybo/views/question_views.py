@@ -3,7 +3,7 @@
 from flask import Blueprint, render_template
 
 # 데이터 처리할 모델 불러오기
-from pybo.models import Question, Answer
+from pybo.models import Question
 
 bp = Blueprint('question', __name__, url_prefix='/question')
 

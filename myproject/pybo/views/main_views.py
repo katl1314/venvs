@@ -13,5 +13,11 @@ def home():
     # 플라스크에서 제공하는 url_for을 사용함.
     return redirect(url_for('question.list'))
 
+"""
+url_for: Flask의 기능으로 라우트가 설정한 함수명으로 URL을 역으로 찾아준다. 
+.을 구분하여 앞에서부터 뒤로 해석하여 함수를 찾는다.
+question은 등록된 블루프린트 이름, list는 함수를 의미한다.
 
+werkzeug.utils의 기능 redirect는 지정한 url을 리다이렉터 한다.
+"""
 
