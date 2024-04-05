@@ -15,3 +15,6 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
  sqlite는 소규모 프로젝트에서 사용되는 가벼운 파일 기반 데이터베이스
  SQLite로 프로젝트를 빠르게 개발하고 대규모 데이터베이스를 적용하여 운영 시스템에 반영한다.
 """
+
+# Flask-WTF 모듈 사용 시 CSRF을 방지하기 위한 시크릿 키 추가
+SECRET_KEY = "dev"

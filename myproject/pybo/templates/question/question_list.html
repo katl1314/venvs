@@ -7,5 +7,7 @@
             <li><a href="{{ url_for('question.detail', question_id=question.id) }}">{{question.subject}}</a></li>
         {% endfor %}
     </ul>
+    <!-- 질문 등록 버튼: 질문 등록 url을 지정한다.  -->
+    <a href="{{ url_for('question.create') }}">질문 등록 하기</a>
 {% endif %}
 {% endblock %}

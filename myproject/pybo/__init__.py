@@ -1,4 +1,5 @@
 from flask import Flask
+# flask_migrate는 파이썬에서 사용하는 데이터베이스 관리 툴인 alembic을 flask에서도 사용할 수 있도록 제공함.
 from flask_migrate import Migrate
 # Sqlalchemy => Python ORM Library
 from flask_sqlalchemy import SQLAlchemy
@@ -13,10 +14,10 @@ import config
 db = SQLAlchemy()
 migrate = Migrate()
 
+# create_app함수는 main함수의 역할이라고 생각함. => 반드시 있어야함.
 def create_app():
     # Flask 애플리케이션 생성
-    # __name__ <= 모듈명
-    app = Flask(__name__)
+    app = Flask(__name__) # 모듈명 전달
 
     # config.py의 작성된 항목을 app.config 환경 변수로 부르기 위해서 사용됨.
     app.config.from_object(config)
