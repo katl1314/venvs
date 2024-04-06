@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h5 class="my-3 border-bottom pb-2">질문 등록</h5>
+    <form class="post-form my-3" method="post">
+        {{form.subject.label}}
+        {{form.subject()}}
 
-</body>
-</html>
+        {{form.content.label}}
+        {{form.content()}}
+
+        <button class="btn btn-primary">저장하기</button>
+        {{form.csrf_token}}
+        {% for field, errors in form.errors.items() %}
+            <div class="alert alert-manager" role="alert">
+                <strong>{{form[field].label}}</strong>: {{','.join(errors)}}
+            </div>
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}
