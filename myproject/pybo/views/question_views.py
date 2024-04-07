@@ -6,7 +6,7 @@ from datetime import datetime
 # 데이터 처리할 모델 불러오기
 from pybo.models import Question
 
-from ..forms import QuestionForm
+from ..forms import QuestionForm, AnswerForm
 
 from pybo import db
 
@@ -28,7 +28,8 @@ def detail(question_id):
     # id을 통해 question값을 가져오고
     # question = Question.query.get_or_404(question_id)
     question = Question.query.get(question_id)
-    return render_template('question/question_detail.html', question=question)
+    form = AnswerForm()
+    return render_template('question/question_detail.html', question=question, form=form)
 
 # 질문 등록 GET 또는 POST 처리 가능
 

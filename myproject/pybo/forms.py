@@ -14,4 +14,7 @@ from wtforms.validators import DataRequired
 class QuestionForm(FlaskForm):
     # StringField(label, validators=[wtforms.validators]
     subject = StringField('제목', validators=[DataRequired('제목 항목을 필수입니다.')])
-    content = TextAreaField('내용', validators=[DataRequired('콘텐츠는 필수입니다.')])
+    content = TextAreaField('내용', validators=[DataRequired('내용은 필수입니다.')])
+
+class AnswerForm(FlaskForm):
+    content = TextAreaField('내용', validators=[DataRequired('내용은 필수입니다.')])
