@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <!-- Pybo 클릭 시 홈으로 이동 -->
+    <a class="navbar-brand" href="{{url_for('main.home')}}">Pybo</a>
+    <button type="button" class="navbar-toggler ml-auto" data-toggle="colapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigator">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">계정 생성</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">로그인</a>
+            </li>
+        </ul>
+    </div>
+</nav>

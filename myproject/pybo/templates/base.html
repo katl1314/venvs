@@ -7,8 +7,15 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        li {
+            list-style-type: none;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
+    {% include 'navigate.html' %}
     <!-- 템플릿을 적용 시 block - endblock 템플릿 태그 사용해야함. -->
     {% block content %}
     {% endblock %}

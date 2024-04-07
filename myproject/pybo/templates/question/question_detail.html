@@ -23,5 +23,13 @@
         </div>
         {% endfor %}
     </div>
+    <div>
+        <h2>Error Log</h2>
+        <ul>
+            {% for data in form.errors %}
+            <li>{{''.join(form.errors[data])}}</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endif %}
 {% endblock %}

@@ -15,9 +15,22 @@ bp = Blueprint('question', __name__, url_prefix='/question')
 # 라우터 함수 등록
 @bp.route('/list')
 def list():
+    # GET방식으로 접근 시 query로 가져온 page값 없을 시 1로 설정하겠다.
+    # http://127.0.0.1:5000/question/list?page=4으로 접근 시 request.args.get('page')는 4가 된다.
+    page = request.args.get('page', type=int, default=1)
+
     # Quesion의 create_date를 기준으로 내림차순한 리스트 조회
     question_list = Question.query.order_by(Question.create_date.desc())
+    
+    # Query내 paginate를 통해 해당 페이지에 대한 리스트를 반환합니다. page정보와 page당 몇개 보여줄지 per_page로 설정한다.
+    question_list = question_list.paginate(page=page, per_page=10)
     # render_template(template_name[html], content[data])
+
+    # print(question_list.has_prev)
+    # print(question_list.has_next)
+    # for page in question_list.iter_pages():
+    #     print(page == None)
+
     return render_template('question/question_list.html', question_list=question_list)
 
 # /detail/1

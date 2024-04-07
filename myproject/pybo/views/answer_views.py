@@ -12,9 +12,6 @@ def create(question_id):
     form = AnswerForm()
     question = Question.query.get(question_id)
 
-    print('form.data ---- ', form.data)
-    print('form.validate_on_submit() ---- ', form.validate_on_submit())
-
     if form.validate_on_submit():
         content = form.data['content']
 
@@ -24,4 +21,6 @@ def create(question_id):
         db.session.commit()
         return redirect(url_for('question.detail', question_id=question_id))
 
-    return render_template('question/question_detail.html', form=form, question=question)
+    print(len(form.errors) > 0)
+    # validator 체크 실패 시... => 에러 내용은 form.errors에서 확인 가능함.
+    return render_template('question/question_detail.html', question=question, form=form)
